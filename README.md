@@ -38,9 +38,7 @@ docker run -p 3000:3000 web-crawler
 ## Usage
 Send a POST request to `/crawl` with a JSON body:
 ```json
-{
-  "url": "https://example.com"
-}
+node src/client/client.js https://example.com
 ```
 
 ## Limitations
