@@ -1,18 +1,13 @@
-FROM node:18-alpine
+FROM node:22-alpine3.20
 
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+COPY server/package.json server/package-lock.json ./
 
-# Install dependencies
 RUN npm install
 
-# Copy source code
-COPY src/ ./src/
+COPY src/ ./
 
-# Expose port
 EXPOSE 3000
 
-# Run the server
 CMD ["npm", "start"]
